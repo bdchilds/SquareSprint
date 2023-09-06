@@ -5,10 +5,21 @@ using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 
+private BoxMover boxMover;
+
 public class Player_Agent : Agent
 {
-    public override OnActionReceived(ActionBuffers actions)
+    public override void CollectObservations(VectorSensor sensor)
     {
-        float moveX = actions.ContinuousActions[0];
+        sensor.AddObservation(boxMover.canJump);
+    }
+    
+    public override void OnActionReceived(ActionBuffers actions)
+    {
+        if(actions.DiscreteActions[0] == 1){
+            if(boxMover.canJump){
+                boxMover.Jump();
+            }
+        }
     }
 }

@@ -15,7 +15,7 @@ public class BoxMover : MonoBehaviour
 
 
 
-    private bool canJump = true;
+    public bool canJump = true;
 
     Rigidbody2D body;
     BoxCollider2D boxCollider;
@@ -27,6 +27,16 @@ public class BoxMover : MonoBehaviour
 
         // include only layer 6
         layerMask = 1 << 6;
+    }
+
+    void Jump(){
+        var velocity = body.velocity;
+            var newVelocity = new Vector2(velocity.x, 0);
+            body.velocity = newVelocity;
+            canJump = false;
+            v = jumpForce;
+            Vector3 tempVect = new Vector3(0, v, 0);
+            body.AddRelativeForce(tempVect);
     }
 
     // Update is called once per frame
@@ -65,21 +75,13 @@ public class BoxMover : MonoBehaviour
             canJump = true;
         }
 
+        /*
         float v = 0;
         if (isTouchingGround && Input.GetKey(KeyCode.Space) && canJump)
         {
-            
-            var velocity = body.velocity;
-            var newVelocity = new Vector2(velocity.x, 0);
-            body.velocity = newVelocity;
-            canJump = false;
-            v = jumpForce;
-            Vector3 tempVect = new Vector3(0, v, 0);
-            body.AddRelativeForce(tempVect);
+            Jump();
         }
-
-        
-        
+        */
     }
 
     void FixedUpdate()
@@ -88,7 +90,6 @@ public class BoxMover : MonoBehaviour
         var velocity = body.velocity;
         Vector3 newVelocity = new Vector3(horizontalVelocity, velocity.y);
         body.velocity = newVelocity;
-
         
     }
 }
