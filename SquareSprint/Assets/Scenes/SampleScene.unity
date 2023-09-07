@@ -185,6 +185,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2704534561551919093, guid: 539aa5c5cd255894b96dbeeba28256bc, type: 3}
   m_PrefabInstance: {fileID: 2519010883556924246}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &325809261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325809249}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2902496c0120472b90269f94a0aec7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Record: 1
+  NumStepsToRecord: 0
+  DemonstrationName: GDashDemo3
+  DemonstrationDirectory: GDash
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,6 +719,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2911533293534288960, guid: 539aa5c5cd255894b96dbeeba28256bc, type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2911533293534288960, guid: 539aa5c5cd255894b96dbeeba28256bc, type: 3}
+      propertyPath: m_BehaviorType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2911533293534288960, guid: 539aa5c5cd255894b96dbeeba28256bc, type: 3}
+      propertyPath: m_DeterministicInference
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2911533293534288960, guid: 539aa5c5cd255894b96dbeeba28256bc, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
       value: 2
       objectReference: {fileID: 0}
@@ -713,7 +741,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2704534561551919093, guid: 539aa5c5cd255894b96dbeeba28256bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 325809261}
   m_SourcePrefab: {fileID: 100100000, guid: 539aa5c5cd255894b96dbeeba28256bc, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
