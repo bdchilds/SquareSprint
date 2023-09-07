@@ -288,7 +288,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.3, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -721,10 +721,10 @@ PrefabInstance:
     - target: {fileID: 2911533293534288960, guid: 539aa5c5cd255894b96dbeeba28256bc, type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5022602860645237092, guid: 8ac765996abcc034c94375d09cfea546, type: 3}
     - target: {fileID: 2911533293534288960, guid: 539aa5c5cd255894b96dbeeba28256bc, type: 3}
       propertyPath: m_BehaviorType
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2911533293534288960, guid: 539aa5c5cd255894b96dbeeba28256bc, type: 3}
       propertyPath: m_DeterministicInference
