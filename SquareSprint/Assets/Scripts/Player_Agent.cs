@@ -29,6 +29,7 @@ public class Player_Agent : Agent
     {
         //just need y velocity since we are moving horizontally at a constant velocity
         sensor.AddObservation(body.velocity.y);
+        sensor.AddObservation(boxMover.isTouchingGround());
     }
 
     public override void OnActionReceived(ActionBuffers actions)
@@ -45,13 +46,12 @@ public class Player_Agent : Agent
         if (collision.CompareTag("End"))
         {
             AddReward(1f);
-            EndEpisode();
         }
         else if (collision != null)
         {
             AddReward(-1f);
-            EndEpisode();
         }
+        EndEpisode();
     }
 
     //hueristic to test the agent
