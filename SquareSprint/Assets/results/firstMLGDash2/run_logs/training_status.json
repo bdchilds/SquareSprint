@@ -1,0 +1,65 @@
+{
+    "Basic": {
+        "checkpoints": [
+            {
+                "steps": 3499991,
+                "file_path": "results\\firstMLGDash2\\Basic\\Basic-3499991.onnx",
+                "reward": 10.984001770019532,
+                "creation_time": 1694089806.2057142,
+                "auxillary_file_paths": [
+                    "results\\firstMLGDash2\\Basic\\Basic-3499991.pt"
+                ]
+            },
+            {
+                "steps": 3999697,
+                "file_path": "results\\firstMLGDash2\\Basic\\Basic-3999697.onnx",
+                "reward": 9.705358811787196,
+                "creation_time": 1694090685.6801317,
+                "auxillary_file_paths": [
+                    "results\\firstMLGDash2\\Basic\\Basic-3999697.pt"
+                ]
+            },
+            {
+                "steps": 4499946,
+                "file_path": "results\\firstMLGDash2\\Basic\\Basic-4499946.onnx",
+                "reward": 8.097223387824165,
+                "creation_time": 1694091568.5938563,
+                "auxillary_file_paths": [
+                    "results\\firstMLGDash2\\Basic\\Basic-4499946.pt"
+                ]
+            },
+            {
+                "steps": 4999681,
+                "file_path": "results\\firstMLGDash2\\Basic\\Basic-4999681.onnx",
+                "reward": 6.7689664117221175,
+                "creation_time": 1694092471.961099,
+                "auxillary_file_paths": [
+                    "results\\firstMLGDash2\\Basic\\Basic-4999681.pt"
+                ]
+            },
+            {
+                "steps": 5000083,
+                "file_path": "results\\firstMLGDash2\\Basic\\Basic-5000083.onnx",
+                "reward": 7.318645089359607,
+                "creation_time": 1694092472.056174,
+                "auxillary_file_paths": [
+                    "results\\firstMLGDash2\\Basic\\Basic-5000083.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 5000083,
+            "file_path": "results\\firstMLGDash2\\Basic.onnx",
+            "reward": 7.318645089359607,
+            "creation_time": 1694092472.056174,
+            "auxillary_file_paths": [
+                "results\\firstMLGDash2\\Basic\\Basic-5000083.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}
