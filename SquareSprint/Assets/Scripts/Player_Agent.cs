@@ -9,24 +9,24 @@ public class Player_Agent : Agent
 {
     private BoxMover boxMover;
     private Rigidbody2D body;
-    private RayPerceptionSensorComponent2D rayPerceptionSensorComponent2D;
 
     public override void Initialize()
     {
-        rayPerceptionSensorComponent2D = GetComponent<RayPerceptionSensorComponent2D>();
         body = GetComponent<Rigidbody2D>();
         boxMover = GetComponent<BoxMover>();
+
     }
 
     public override void OnEpisodeBegin()
     {
-        transform.position = new Vector3(0, 0);
+        //reset the position of the player on the start position relative to the parent position
+        transform.localPosition = new Vector3(-5, 1.5f, 0);
+        //reset the velocity of the player
+        body.velocity = new Vector2(0, 0);
     }
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        sensor.AddObservation(boxMover.canJump);
-        sensor.AddObservation(boxMover.isTouchingGround());
         //just need y velocity since we are moving horizontally at a constant velocity
         sensor.AddObservation(body.velocity.y);
     }
@@ -35,18 +35,32 @@ public class Player_Agent : Agent
     {
         AddReward(0.1f);
         if(actions.DiscreteActions[0] == 1){
-            if(boxMover.isTouchingGround()){
-                boxMover.Jump();
-            }
+            boxMover.Jump();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision != null)
+        //if we hit the collider with tag "end", we win
+        if (collision.CompareTag("End"))
+        {
+            AddReward(1f);
+            EndEpisode();
+        }
+        else if (collision != null)
         {
             AddReward(-1f);
             EndEpisode();
+        }
+    }
+
+    //hueristic to test the agent
+    public override void Heuristic(in ActionBuffers actionsOut)
+    {
+        var discreteActionsOut = actionsOut.DiscreteActions;
+        if (Input.GetKey(KeyCode.Space))
+        {
+            discreteActionsOut[0] = 1;
         }
     }
 }

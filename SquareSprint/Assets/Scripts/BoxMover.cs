@@ -27,15 +27,14 @@ public class BoxMover : MonoBehaviour
         layerMask = 1 << 6;
     }
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
-
         //jump if we can jump and we are touching the ground and the space bar is pressed
-        if (Input.GetKeyDown(KeyCode.Space) && isTouchingGround())
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
         }
-    }
+    }*/
 
     void FixedUpdate()
     {
@@ -49,11 +48,14 @@ public class BoxMover : MonoBehaviour
     public void Jump(){
         var velocity = body.velocity;
         var newVelocity = new Vector2(velocity.x, 0);
-        body.velocity = newVelocity;
-        canJump = false;
-        v = jumpForce;
-        Vector3 tempVect = new Vector3(0, v, 0);
-        body.AddRelativeForce(tempVect);
+        //jump only if we are touching the ground
+        if (isTouchingGround())
+        {
+            body.velocity = newVelocity;
+            v = jumpForce;
+            Vector3 tempVect = new Vector3(0, v, 0);
+            body.AddRelativeForce(tempVect);
+        }
     }
 
     // check if we are touching the ground by raycasting down

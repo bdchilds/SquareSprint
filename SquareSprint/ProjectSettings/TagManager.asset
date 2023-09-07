@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Spikes
   - Ground
+  - End
   layers:
   - Default
   - TransparentFX
