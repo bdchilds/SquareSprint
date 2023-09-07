@@ -20,14 +20,7 @@ public class PlayerCollider : MonoBehaviour
     }
 
     // detect when a trigger is hit
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision != null)
-        {
-            transform.position = new Vector3(0, 0);
-            Debug.Log("Died");
-        }
-    }
+    
 
     /*private void OnCollisionEnter(Collision collision)
     {

@@ -9,13 +9,11 @@ public class BoxMover : MonoBehaviour
     public float jumpForce = 100;
     public float horizontalVelocity = 5;
 
-    private bool isTouchingGround = false;
-
     private int layerMask;
 
-
-
     public bool canJump = true;
+    private float v = 0;
+    private Vector2 position;
 
     Rigidbody2D body;
     BoxCollider2D boxCollider;
@@ -28,60 +26,15 @@ public class BoxMover : MonoBehaviour
         // include only layer 6
         layerMask = 1 << 6;
     }
-
-    void Jump(){
-        var velocity = body.velocity;
-            var newVelocity = new Vector2(velocity.x, 0);
-            body.velocity = newVelocity;
-            canJump = false;
-            v = jumpForce;
-            Vector3 tempVect = new Vector3(0, v, 0);
-            body.AddRelativeForce(tempVect);
-    }
-
     // Update is called once per frame
     void Update()
     {
-        Vector2 position = transform.position;
-        position.y -= boxCollider.size.y / 2;
-        position.x -= boxCollider.size.x / 2;
-        Vector2 direction = Vector2.down;
-        float distance = 0.1f;
 
-        float raycastStepSize = boxCollider.size.x / 10;
-        // create 10 raycasts from one side of the cube to the other
-        RaycastHit2D[] hits = new RaycastHit2D[20];
-        for (int i = 0; i <= 10; i++) {
-            var hit = Physics2D.Raycast(position, direction, distance, layerMask);
-            // Debug.DrawRay(position, direction, Color.green);
-            hits[i] = hit;
-            position.x += raycastStepSize;
-        }
-        isTouchingGround = false;
-        foreach(var hit in hits)
-        {
-            if( hit.collider != null )
-                isTouchingGround = true;
-        }
-
-        if(!isTouchingGround ) {
-            Debug.DrawRay(transform.position, Vector2.up, Color.red);
-        }
-
-        // if the input is down it needs to only trip again once space is released
-
-        if (!isTouchingGround)
-        {
-            canJump = true;
-        }
-
-        /*
-        float v = 0;
-        if (isTouchingGround && Input.GetKey(KeyCode.Space) && canJump)
+        //jump if we can jump and we are touching the ground and the space bar is pressed
+        if (Input.GetKeyDown(KeyCode.Space) && isTouchingGround())
         {
             Jump();
         }
-        */
     }
 
     void FixedUpdate()
@@ -91,5 +44,22 @@ public class BoxMover : MonoBehaviour
         Vector3 newVelocity = new Vector3(horizontalVelocity, velocity.y);
         body.velocity = newVelocity;
         
+    }
+
+    public void Jump(){
+        var velocity = body.velocity;
+        var newVelocity = new Vector2(velocity.x, 0);
+        body.velocity = newVelocity;
+        canJump = false;
+        v = jumpForce;
+        Vector3 tempVect = new Vector3(0, v, 0);
+        body.AddRelativeForce(tempVect);
+    }
+
+    // check if we are touching the ground by raycasting down
+    public bool isTouchingGround(){
+        float extraheight = 0.1f;
+        RaycastHit2D hit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, extraheight, layerMask);
+        return hit.collider != null;
     }
 }
