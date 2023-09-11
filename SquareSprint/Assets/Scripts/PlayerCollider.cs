@@ -25,7 +25,7 @@ public class PlayerCollider : MonoBehaviour
         if (collision != null)
         {
             transform.position = new Vector3(0, 0);
-            Debug.Log("Died");
+            // transform.position = new Vector3(0, -11);
         }
     }
 
