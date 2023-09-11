@@ -25,7 +25,8 @@ public class PlayerCollider : MonoBehaviour
         if (collision != null)
         {
             transform.position = new Vector3(0, 0);
-            // transform.position = new Vector3(0, -11);
+            //transform.position = new Vector3(113, 4);
+            //transform.position = new Vector3(0, -11);
         }
     }
 
