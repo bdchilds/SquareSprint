@@ -1044,7 +1044,7 @@ PrefabInstance:
       objectReference: {fileID: 5022602860645237092, guid: 8ac765996abcc034c94375d09cfea546, type: 3}
     - target: {fileID: 2911533293534288960, guid: 539aa5c5cd255894b96dbeeba28256bc, type: 3}
       propertyPath: m_BehaviorType
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2911533293534288960, guid: 539aa5c5cd255894b96dbeeba28256bc, type: 3}
       propertyPath: m_DeterministicInference

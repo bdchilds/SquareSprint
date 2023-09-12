@@ -17,14 +17,14 @@ behaviors:
     reward_signals:
       extrinsic:
         gamma: 0.8
-        strength: 1.0
+        strength: 0.1
       gail:
-        strength: 0.3
+        strength: 0.5
         demo_path: Demonstrations/GDashDemo.demo
     behavioral_cloning:
-      strength: 0.3
+      strength: 1.0
       demo_path: Demonstrations/GDashDemo.demo
     keep_checkpoints: 20
-    max_steps: 10000000
+    max_steps: 5000000
     time_horizon: 2048
     summary_freq: 20000
