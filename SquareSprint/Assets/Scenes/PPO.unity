@@ -1044,11 +1044,11 @@ PrefabInstance:
       objectReference: {fileID: 5022602860645237092, guid: 464840e61149b2e4ab957bf4583d245c, type: 3}
     - target: {fileID: 2911533293534288960, guid: 539aa5c5cd255894b96dbeeba28256bc, type: 3}
       propertyPath: m_BehaviorType
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2911533293534288960, guid: 539aa5c5cd255894b96dbeeba28256bc, type: 3}
       propertyPath: m_InferenceDevice
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2911533293534288960, guid: 539aa5c5cd255894b96dbeeba28256bc, type: 3}
       propertyPath: m_DeterministicInference
