@@ -21549,7 +21549,6 @@ GameObject:
   - component: {fileID: 3584295150386093078}
   - component: {fileID: 6138204826944204019}
   - component: {fileID: 7075406235063504775}
-  - component: {fileID: 9064994510182400068}
   - component: {fileID: 7187744777310335821}
   - component: {fileID: 8951331744820895976}
   - component: {fileID: 2911533293534288960}
@@ -21717,18 +21716,6 @@ MonoBehaviour:
   jumpForce: 1000
   horizontalVelocity: 8
   canJump: 1
---- !u!114 &9064994510182400068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2704534561551919093}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27177e90b01cee34cb77901dbb345a0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!70 &7187744777310335821
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -21798,10 +21785,10 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 5022602860645237092, guid: 8ac765996abcc034c94375d09cfea546, type: 3}
+  m_Model: {fileID: 5022602860645237092, guid: 464840e61149b2e4ab957bf4583d245c, type: 3}
   m_InferenceDevice: 1
   m_BehaviorType: 0
-  m_BehaviorName: Basic
+  m_BehaviorName: PPOV2
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1

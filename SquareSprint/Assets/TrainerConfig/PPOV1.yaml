@@ -1,0 +1,30 @@
+behaviors:
+  PPOV1:
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 256 #32-512 for Discrete , #512-5120 for Continuous
+      buffer_size: 10240 #2048-409600 range, should be larger and a multiple of batch_size
+      learning_rate: 3.0e-4 #1e-5 - 1e-3 range
+      beta: 5.0e-3 #1e-4 - 1e-2, entropy regularization strength, lower for more exploration
+      epsilon: 0.2  #0.1-0.3 range, acceptable threshold for ratio of new policy to old policy
+      lambd: 0.99 #0.9-1 range, lower for more bias, higher for more variance
+      num_epoch: 3 #3-30 range, number of epochs per update, lower for stability, higher for faster learning
+      learning_rate_schedule: linear 
+    network_settings:
+      normalize: true #normalize input observations
+      hidden_units: 128 # 32-512 range, number of units in hidden layers
+      num_layers: 2 #1-3 range, number of hidden layers
+    reward_signals:
+      extrinsic:
+        gamma: 0.8
+        strength: 0.1
+      gail:
+        strength: 0.5
+        demo_path: Demonstrations/GDashDemo.demo
+    behavioral_cloning:
+      strength: 1.0
+      demo_path: Demonstrations/GDashDemo.demo
+    keep_checkpoints: 20
+    max_steps: 5000000
+    time_horizon: 2048
+    summary_freq: 20000
