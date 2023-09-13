@@ -24,7 +24,7 @@ behaviors:
     behavioral_cloning:
       strength: 1.0
       demo_path: Demonstrations/GDashDemo.demo
-    keep_checkpoints: 20
+    keep_checkpoints: 10
     max_steps: 5000000
     time_horizon: 2048
     summary_freq: 20000
