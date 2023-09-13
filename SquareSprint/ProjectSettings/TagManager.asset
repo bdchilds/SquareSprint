@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Spikes
+  - Ground
+  - End
+  - Car
+  - Wall
+  - Road
   layers:
   - Default
   - TransparentFX
@@ -13,7 +19,7 @@ TagManager:
   - UI
   - Ground
   - Death
-  - 
+  - Player
   - 
   - 
   - 
