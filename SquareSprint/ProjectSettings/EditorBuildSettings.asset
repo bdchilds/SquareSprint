@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NEAT.unity
     guid: da6a796437d7eeb4bb7223e3bedcca14
+  - enabled: 1
+    path: Assets/Scenes/Player.unity
+    guid: 9eb9b8c5c718b394bac055dde745fe9e
   m_configObjects: {}
