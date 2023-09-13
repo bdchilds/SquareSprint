@@ -7,6 +7,9 @@ TagManager:
   - Spikes
   - Ground
   - End
+  - Car
+  - Wall
+  - Road
   layers:
   - Default
   - TransparentFX
@@ -16,7 +19,7 @@ TagManager:
   - UI
   - Ground
   - Death
-  - 
+  - Player
   - 
   - 
   - 
