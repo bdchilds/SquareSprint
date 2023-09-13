@@ -1047,6 +1047,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2911533293534288960, guid: 539aa5c5cd255894b96dbeeba28256bc, type: 3}
+      propertyPath: m_InferenceDevice
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2911533293534288960, guid: 539aa5c5cd255894b96dbeeba28256bc, type: 3}
       propertyPath: m_DeterministicInference
       value: 0
       objectReference: {fileID: 0}
